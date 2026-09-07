@@ -74,27 +74,27 @@ export default function QuestionScreen({ questions, subtitle, onComplete }) {
                 >
                     {/* Counter */}
                     <div className="text-right mb-6">
-                        <span className="text-[12px] text-muted-foreground">
+                        <span className="text-[12px] text-white/50 font-google-sans">
                             Pregunta {currentIndex + 1} de {total}
                         </span>
                     </div>
 
                     {/* Criticality badge */}
                     <div className="mb-4">
-                        <span className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-medium ${badge.bg} ${badge.text}`}>
+                        <span className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-medium font-google-sans ${badge.bg} ${badge.text}`}>
                             {q.knockout && <span>⚡</span>}
                             {badge.label}
                         </span>
                     </div>
 
                     {/* Question */}
-                    <h3 className="text-[20px] font-medium text-foreground leading-[1.5] mb-2">
+                    <h3 className="text-[20px] font-medium text-white leading-[1.5] mb-2 font-funnel">
                         {q.question}
                     </h3>
 
                     {/* Help text */}
                     {q.help && (
-                        <p className="text-[12px] italic text-muted-foreground mb-8">
+                        <p className="text-[13px] italic text-white/60 mb-8 font-google-sans">
                             {q.help}
                         </p>
                     )}

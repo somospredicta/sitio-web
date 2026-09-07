@@ -19,13 +19,13 @@ const team = [
 
 export default function TeamSection() {
     return (
-        <section id="equipo" className="bg-white py-16 md:py-24">
+        <section id="equipo" className="bg-[#000030] py-16 md:py-24 border-t border-white/10">
             <div className="max-w-4xl mx-auto px-4 sm:px-6">
                 <div className="text-center mb-14">
-                    <h2 className="text-[28px] md:text-[32px] font-semibold text-foreground mb-3">
+                    <h2 className="text-[28px] md:text-[32px] font-semibold text-white mb-3 font-funnel">
                         El equipo detrás de <span className="text-[#0059FF]">Predicta</span>
                     </h2>
-                    <p className="text-[15px] text-muted-foreground max-w-xl mx-auto leading-relaxed">
+                    <p className="text-[15px] text-white/60 max-w-xl mx-auto leading-relaxed font-google-sans">
                         Combinamos formación académica, experiencia institucional y tecnología para cuantificar lo que otros solo describen.
                     </p>
                 </div>
@@ -34,20 +34,20 @@ export default function TeamSection() {
                     {team.map((member) => (
                         <div
                             key={member.name}
-                            className="border border-border/60 rounded-xl p-6 text-center"
+                            className="bg-[#0A0A35] border border-white/10 rounded-xl p-6 text-center hover:border-[#0059FF]/40 transition-colors shadow-lg"
                         >
                             {/* Avatar */}
-                            <div className="w-20 h-20 rounded-full border-2 border-primary mx-auto mb-4 overflow-hidden bg-accent flex items-center justify-center">
+                            <div className="w-20 h-20 rounded-full border-2 border-[#0059FF] mx-auto mb-4 overflow-hidden bg-white/10 flex items-center justify-center">
                                 {member.photo ? (
                                     <img src={member.photo} alt={member.name} className={`w-full h-full object-cover ${member.name === 'Giuliano Doffo' ? 'object-center scale-125' : 'object-top'}`} />
                                 ) : (
-                                    <span className="text-[20px] font-bold text-primary">{member.initials}</span>
+                                    <span className="text-[20px] font-bold text-[#0059FF]">{member.initials}</span>
                                 )}
                             </div>
 
-                            <h3 className="text-[16px] font-semibold text-foreground mb-1">{member.name}</h3>
-                            <p className="text-[13px] font-medium text-primary mb-3">{member.role}</p>
-                            <p className="text-[13px] text-muted-foreground leading-[1.6]">{member.description}</p>
+                            <h3 className="text-[16px] font-semibold text-white mb-1 font-funnel">{member.name}</h3>
+                            <p className="text-[13px] font-medium text-[#0059FF] mb-3 font-google-sans">{member.role}</p>
+                            <p className="text-[13px] text-white/70 leading-[1.6] font-google-sans">{member.description}</p>
                         </div>
                     ))}
                 </div>
