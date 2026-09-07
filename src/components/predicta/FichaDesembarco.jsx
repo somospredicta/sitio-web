@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Globe, Users, FileText, Check, X } from 'lucide-react';
 import FichaPaisDemo from '@/components/predicta/FichaPaisDemo';
+import { createCountrySheetLead } from '@/services/api';
 
 const cards = [
     {
@@ -56,15 +57,17 @@ export default function FichaDesembarco() {
         setLoading(true);
         try {
             const paisFinal = form.pais === 'Otro' ? form.pais_otro : form.pais;
-            /*   await base44.entities.Lead.create({
-                  first_name: form.nombre_completo,
-                  last_name: '',
-                  email: form.mail,
-                  company: form.marca,
-                  source: 'ficha_pais',
-                  answers: { telefono: form.telefono, producto: form.producto, pais: paisFinal, tipo: 'ficha_desembarco' },
-              }); */
-        } catch (_) { }
+            await createCountrySheetLead({
+                first_name: form.nombre_completo,
+                last_name: '',
+                email: form.mail,
+                company: form.marca,
+                source: 'ficha_pais',
+                answers: { telefono: form.telefono, producto: form.producto, pais: paisFinal, tipo: 'ficha_desembarco' },
+            });
+        } catch (err) {
+            console.error('Error al guardar lead ficha país:', err);
+        }
         setLoading(false);
         setSubmitted(true);
     };

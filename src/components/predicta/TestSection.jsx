@@ -7,6 +7,7 @@ import ResultPartial from './ResultPartial';
 import LeadForm from './LeadForm';
 import ResultFull from './ResultFull';
 import { PROTOCOLS, calculateIVP } from './testData';
+import { createAutodiagnosticLead } from '@/services/api';
 
 // Stages: 1=selector, 2=questions, 3=calculating, 4=result+form, 5=submitting, 6=full result
 export default function TestSection() {
@@ -34,15 +35,19 @@ export default function TestSection() {
         setIsSubmitting(true);
         setLeadData(formData);
 
-        /*  await base44.entities.Lead.create({
-             ...formData,
-             protocol: selectedProtocol,
-             ivp_score: result.ivpScore,
-             variable_scores: result.variableScores,
-             answers: answers,
-             knockouts_count: result.knockouts.length,
-         });
-  */
+        try {
+            await createAutodiagnosticLead({
+                ...formData,
+                protocol: selectedProtocol,
+                ivp_score: result.ivpScore,
+                variable_scores: result.variableScores,
+                answers: answers,
+                knockouts_count: result.knockouts.length,
+            });
+        } catch (err) {
+            console.error('Error al guardar lead autodiagnóstico:', err);
+        }
+
         setIsSubmitting(false);
         setStage(6);
     };

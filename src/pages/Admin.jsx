@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getLeads } from '@/services/api';
 
 const ADMIN_USER = 'Predicta26';
 const ADMIN_PASS = 'Predicta26';
@@ -88,10 +89,16 @@ export default function Admin() {
 
   useEffect(() => {
     if (!auth) return;
-    /*     base44.entities.Lead.list('-created_date', 200).then(data => {
-          setLeads(data);
-          setLoading(false);
-        }); */
+    setLoading(true);
+    getLeads()
+      .then(data => {
+        setLeads(Array.isArray(data) ? data : []);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error('Error al cargar leads:', err);
+        setLoading(false);
+      });
   }, [auth]);
 
   if (!auth) return <AdminLogin onLogin={() => setAuth(true)} />;
