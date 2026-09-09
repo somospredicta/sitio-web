@@ -48,15 +48,15 @@ export default function QuestionScreen({ questions, subtitle, onComplete }) {
         <div className="max-w-xl mx-auto">
             {/* Subtitle */}
             {subtitle && (
-                <p className="text-[13px] font-semibold text-primary uppercase tracking-wider text-center mb-6">
+                <p className="text-[13px] font-bold text-[#0059FF] uppercase tracking-wider text-center mb-6 font-google-sans">
                     {subtitle}
                 </p>
             )}
 
             {/* Progress bar */}
-            <div className="h-1 bg-border/50 rounded-full mb-6 overflow-hidden">
+            <div className="h-1.5 bg-slate-200 rounded-full mb-6 overflow-hidden">
                 <motion.div
-                    className="h-full bg-primary rounded-full"
+                    className="h-full bg-[#0059FF] rounded-full"
                     initial={{ width: 0 }}
                     animate={{ width: `${progress}%` }}
                     transition={{ duration: 0.3, ease: 'easeOut' }}
@@ -74,7 +74,7 @@ export default function QuestionScreen({ questions, subtitle, onComplete }) {
                 >
                     {/* Counter */}
                     <div className="text-right mb-6">
-                        <span className="text-[12px] text-white/50 font-google-sans">
+                        <span className="text-[12px] text-slate-500 font-google-sans">
                             Pregunta {currentIndex + 1} de {total}
                         </span>
                     </div>
@@ -88,13 +88,13 @@ export default function QuestionScreen({ questions, subtitle, onComplete }) {
                     </div>
 
                     {/* Question */}
-                    <h3 className="text-[20px] font-medium text-white leading-[1.5] mb-2 font-funnel">
+                    <h3 className="text-[20px] font-medium text-slate-900 leading-[1.5] mb-2 font-funnel">
                         {q.question}
                     </h3>
 
                     {/* Help text */}
                     {q.help && (
-                        <p className="text-[13px] italic text-white/60 mb-8 font-google-sans">
+                        <p className="text-[13px] italic text-slate-500 mb-8 font-google-sans">
                             {q.help}
                         </p>
                     )}

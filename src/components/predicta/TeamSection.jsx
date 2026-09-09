@@ -19,13 +19,13 @@ const team = [
 
 export default function TeamSection() {
     return (
-        <section id="equipo" className="bg-[#000030] py-16 md:py-24 border-t border-white/10">
+        <section id="equipo" className="bg-[#F8FAFC] py-16 md:py-24 border-t border-slate-200/60">
             <div className="max-w-4xl mx-auto px-4 sm:px-6">
                 <div className="text-center mb-14">
-                    <h2 className="text-[28px] md:text-[32px] font-semibold text-white mb-3 font-funnel">
+                    <h2 className="text-[28px] md:text-[32px] font-semibold text-slate-900 mb-3 font-funnel">
                         El equipo detrás de <span className="text-[#0059FF]">Predicta</span>
                     </h2>
-                    <p className="text-[15px] text-white/60 max-w-xl mx-auto leading-relaxed font-google-sans">
+                    <p className="text-[15px] text-slate-500 max-w-xl mx-auto leading-relaxed font-google-sans">
                         Combinamos formación académica, experiencia institucional y tecnología para cuantificar lo que otros solo describen.
                     </p>
                 </div>
@@ -34,10 +34,10 @@ export default function TeamSection() {
                     {team.map((member) => (
                         <div
                             key={member.name}
-                            className="bg-[#0A0A35] border border-white/10 rounded-xl p-6 text-center hover:border-[#0059FF]/40 transition-colors shadow-lg"
+                            className="bg-white border border-slate-200/80 rounded-2xl p-6 text-center hover:border-[#0059FF]/40 transition-all duration-200 shadow-sm hover:shadow-md"
                         >
                             {/* Avatar */}
-                            <div className="w-20 h-20 rounded-full border-2 border-[#0059FF] mx-auto mb-4 overflow-hidden bg-white/10 flex items-center justify-center">
+                            <div className="w-20 h-20 rounded-full border-2 border-[#0059FF] mx-auto mb-4 overflow-hidden bg-blue-50 flex items-center justify-center">
                                 {member.photo ? (
                                     <img src={member.photo} alt={member.name} className={`w-full h-full object-cover ${member.name === 'Giuliano Doffo' ? 'object-center scale-125' : 'object-top'}`} />
                                 ) : (
@@ -45,9 +45,9 @@ export default function TeamSection() {
                                 )}
                             </div>
 
-                            <h3 className="text-[16px] font-semibold text-white mb-1 font-funnel">{member.name}</h3>
+                            <h3 className="text-[16px] font-semibold text-slate-900 mb-1 font-funnel">{member.name}</h3>
                             <p className="text-[13px] font-medium text-[#0059FF] mb-3 font-google-sans">{member.role}</p>
-                            <p className="text-[13px] text-white/70 leading-[1.6] font-google-sans">{member.description}</p>
+                            <p className="text-[13px] text-slate-500 leading-[1.6] font-google-sans">{member.description}</p>
                         </div>
                     ))}
                 </div>

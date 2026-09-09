@@ -64,7 +64,7 @@ export default function TestSection() {
     };
 
     return (
-        <section id="test" className="bg-secondary py-16 md:py-24">
+        <section id="test" className="bg-[#F8FAFC] py-16 md:py-24">
             <div className="max-w-5xl mx-auto px-4 sm:px-6">
                 {stage === 1 && (
                     <ProtocolSelector

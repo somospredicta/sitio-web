@@ -38,7 +38,7 @@ export default function ResultPartial({ result, protocol }) {
             >
                 {/* Protocol badge */}
                 <div className="text-center mb-6">
-                    <span className="inline-flex px-3 py-1 rounded-full bg-accent text-primary text-[12px] font-medium">
+                    <span className="inline-flex px-3.5 py-1 rounded-full bg-[#0059FF]/10 text-[#0059FF] text-[12px] font-bold font-google-sans">
                         Protocolo {protocolData.short}
                     </span>
                 </div>
@@ -49,43 +49,43 @@ export default function ResultPartial({ result, protocol }) {
                     <div className={`text-[56px] font-bold ${scoreColor} -mt-4`}>
                         {result.ivpScore.toFixed(2)}
                     </div>
-                    <p className="text-[13px] text-muted-foreground">sobre 5.0</p>
+                    <p className="text-[13px] text-slate-500 font-google-sans">sobre 5.0</p>
                 </div>
 
                 {/* Verdict badge */}
                 <div className="text-center mb-4">
-                    <span className={`inline-flex px-4 py-1.5 rounded-full text-[13px] font-medium ${verdict.bg} ${verdict.text}`}>
+                    <span className={`inline-flex px-4 py-1.5 rounded-full text-[13px] font-semibold font-google-sans ${verdict.bg} ${verdict.text}`}>
                         {verdict.label}
                     </span>
                 </div>
 
                 {/* Interpretation */}
-                <p className="text-center text-[14px] text-muted-foreground mb-8">
+                <p className="text-center text-[14px] text-slate-600 font-google-sans mb-8">
                     {getInterpretation(result.ivpScore, result.hasKnockouts)}
                 </p>
 
                 {/* Separator */}
-                <div className="border-t border-dashed border-border my-8" />
-                <p className="text-center text-[12px] text-muted-foreground mb-6">
+                <div className="border-t border-dashed border-slate-300 my-8" />
+                <p className="text-center text-[12px] font-medium text-slate-500 font-google-sans mb-6">
                     Diagnóstico variable por variable
                 </p>
 
                 {/* Blurred section */}
                 <div className="relative">
                     <div className="blur-[5px] pointer-events-none select-none">
-                        <div className="bg-white rounded-xl border p-4 space-y-3">
+                        <div className="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-4 space-y-3">
                             {protocolData.variables.map((v) => (
-                                <div key={v} className="flex items-center justify-between py-2 border-b border-border/40 last:border-0">
-                                    <span className="text-[14px] font-medium">{VARIABLE_NAMES[v]}</span>
+                                <div key={v} className="flex items-center justify-between py-2 border-b border-slate-100 last:border-0">
+                                    <span className="text-[14px] font-medium text-slate-800 font-google-sans">{VARIABLE_NAMES[v]}</span>
                                     <div className="flex items-center gap-3">
-                                        <span className="text-[14px] font-semibold">3.50</span>
-                                        <span className="px-2 py-0.5 rounded-full text-[11px] bg-[#FAEEDA] text-[#633806]">Amarillo</span>
+                                        <span className="text-[14px] font-semibold text-slate-700 font-google-sans">3.50</span>
+                                        <span className="px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-[#FAEEDA] text-[#633806] font-google-sans">Amarillo</span>
                                     </div>
                                 </div>
                             ))}
                         </div>
                     </div>
-                    <div className="absolute inset-0 bg-white/55 rounded-xl" />
+                    <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px] rounded-2xl" />
                 </div>
             </motion.div>
         </div>

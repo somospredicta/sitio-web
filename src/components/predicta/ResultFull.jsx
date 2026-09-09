@@ -66,7 +66,7 @@ export default function ResultFull({ result, protocol, leadData, onRestart }) {
 
                 {/* Section 1 — Summary */}
                 <div className="text-center mb-8">
-                    <p className="text-[13px] text-muted-foreground mb-4">
+                    <p className="text-[13px] text-slate-500 font-google-sans mb-4">
                         Diagnóstico de {leadData.company} — {monthYear.charAt(0).toUpperCase() + monthYear.slice(1)}
                     </p>
 
@@ -75,16 +75,16 @@ export default function ResultFull({ result, protocol, leadData, onRestart }) {
                     <div className={`text-[36px] font-bold ${getScoreColor(result.ivpScore)} -mt-2`}>
                         {result.ivpScore.toFixed(2)}
                     </div>
-                    <p className="text-[13px] text-muted-foreground mb-3">sobre 5.0</p>
+                    <p className="text-[13px] text-slate-500 font-google-sans mb-3">sobre 5.0</p>
 
-                    <span className={`inline-flex px-4 py-1.5 rounded-full text-[13px] font-medium ${verdict.bg} ${verdict.text}`}>
+                    <span className={`inline-flex px-4 py-1.5 rounded-full text-[13px] font-semibold font-google-sans ${verdict.bg} ${verdict.text}`}>
                         {verdict.label}
                     </span>
                 </div>
 
                 {/* Section 2 — Variable table */}
-                <div className="bg-white rounded-xl border p-5 mb-6">
-                    <div className="grid grid-cols-3 text-[11px] font-semibold text-muted-foreground uppercase tracking-wider pb-3 border-b mb-1">
+                <div className="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-5 mb-6">
+                    <div className="grid grid-cols-3 text-[11px] font-semibold text-slate-400 uppercase tracking-wider pb-3 border-b border-slate-100 mb-1 font-google-sans">
                         <span>Variable</span>
                         <span className="text-center">Score</span>
                         <span className="text-right">Estado</span>
@@ -95,9 +95,9 @@ export default function ResultFull({ result, protocol, leadData, onRestart }) {
                         const showWarning = score < 4.1;
 
                         return (
-                            <div key={v} className="py-3 border-b border-border/30 last:border-0">
+                            <div key={v} className="py-3 border-b border-slate-100 last:border-0 font-google-sans">
                                 <div className="grid grid-cols-3 items-center">
-                                    <span className="text-[14px] font-medium text-foreground">{VARIABLE_NAMES[v]}</span>
+                                    <span className="text-[14px] font-medium text-slate-800">{VARIABLE_NAMES[v]}</span>
                                     <div className="text-center">
                                         <span className={`inline-flex px-2.5 py-0.5 rounded-full text-[13px] font-semibold ${badge.bg} ${badge.text}`}>
                                             {score.toFixed(2)}
@@ -106,7 +106,7 @@ export default function ResultFull({ result, protocol, leadData, onRestart }) {
                                     <span className={`text-right text-[12px] font-medium ${badge.text}`}>{badge.label}</span>
                                 </div>
                                 {showWarning && (
-                                    <p className="text-[12px] italic text-muted-foreground mt-1.5 pl-0">
+                                    <p className="text-[12px] italic text-slate-500 mt-1.5 pl-0">
                                         {VARIABLE_WARNINGS[v]}
                                     </p>
                                 )}
@@ -118,10 +118,10 @@ export default function ResultFull({ result, protocol, leadData, onRestart }) {
                 {/* Section 3 — Knockouts */}
                 {result.hasKnockouts && (
                     <div className="bg-[#FCEBEB] border-l-[3px] border-[#E74C3C] rounded-r-lg px-4 py-3 mb-6">
-                        <p className="text-[14px] font-semibold text-[#791F1F] mb-1">
+                        <p className="text-[14px] font-semibold text-[#791F1F] mb-1 font-google-sans">
                             ⚠ {result.knockouts.length} condicion{result.knockouts.length === 1 ? '' : 'es'} crítica{result.knockouts.length === 1 ? '' : 's'} detectada{result.knockouts.length === 1 ? '' : 's'}
                         </p>
-                        <p className="text-[13px] text-[#791F1F]">
+                        <p className="text-[13px] text-[#791F1F] font-google-sans">
                             Estas condiciones requieren resolución antes de avanzar, independientemente del score promedio.
                         </p>
                     </div>
@@ -129,19 +129,19 @@ export default function ResultFull({ result, protocol, leadData, onRestart }) {
 
                 {/* Section 4 — Critical lever */}
                 {result.criticalLever && (
-                    <div className="border-2 border-primary rounded-xl bg-accent p-4 mb-8">
+                    <div className="border-2 border-[#0059FF] rounded-2xl bg-blue-50/50 p-5 mb-8">
                         <div className="flex items-start gap-3">
                             <div className="flex-shrink-0 mt-0.5">
-                                <Lightbulb className="w-5 h-5 text-primary" />
+                                <Lightbulb className="w-5 h-5 text-[#0059FF]" />
                             </div>
                             <div>
-                                <h4 className="text-[14px] font-bold text-foreground mb-1">Tu palanca crítica</h4>
-                                <p className="text-[14px] text-foreground">
+                                <h4 className="text-[14px] font-bold text-slate-900 mb-1 font-funnel">Tu palanca crítica</h4>
+                                <p className="text-[14px] text-slate-800 font-google-sans">
                                     Si resolvés <strong>{VARIABLE_NAMES[result.criticalLever]}</strong>, tu IVP pasa de{' '}
                                     <strong>{result.ivpScore.toFixed(2)}</strong> a{' '}
                                     <strong>{result.projectedScore.toFixed(2)}</strong>
                                 </p>
-                                <p className="text-[13px] text-muted-foreground mt-1.5">
+                                <p className="text-[13px] text-slate-500 mt-1.5 font-google-sans">
                                     {getLeverAction(result.criticalLever)}
                                 </p>
                             </div>
@@ -150,8 +150,8 @@ export default function ResultFull({ result, protocol, leadData, onRestart }) {
                 )}
 
                 {/* Section 5 — CTAs */}
-                <div className="text-center">
-                    <h3 className="text-[18px] font-semibold text-foreground mb-6">
+                <div className="text-center font-google-sans">
+                    <h3 className="text-[18px] font-semibold text-slate-900 mb-6 font-funnel">
                         ¿Qué querés hacer con este diagnóstico?
                     </h3>
 
@@ -159,31 +159,31 @@ export default function ResultFull({ result, protocol, leadData, onRestart }) {
                         href="https://calendly.com/institucional-predicta/30min"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 w-full h-[52px] rounded-lg bg-primary text-white font-medium text-[15px] hover:bg-primary/90 transition-colors mb-2"
+                        className="flex items-center justify-center gap-2 w-full h-[52px] rounded-lg bg-[#0059FF] text-white font-medium text-[15px] hover:bg-[#0059FF]/90 transition-colors mb-2"
                     >
                         <Calendar className="w-4 h-4" />
                         Agendar una reunión virtual con Predicta
                     </a>
-                    <p className="text-[11px] text-muted-foreground mb-5">
+                    <p className="text-[11px] text-slate-500 mb-5">
                         30 minutos · Sin costo · Por videollamada
                     </p>
 
-                    <p className="text-[12px] text-muted-foreground mb-5">o</p>
+                    <p className="text-[12px] text-slate-400 mb-5">o</p>
 
                     <a
                         href={`mailto:institucional@predicta.ar?subject=${mailSubject}&body=${mailBody}`}
-                        className="flex items-center justify-center gap-2 w-full h-[52px] rounded-lg border-2 border-border text-foreground font-medium text-[15px] hover:bg-secondary transition-colors mb-2"
+                        className="flex items-center justify-center gap-2 w-full h-[52px] rounded-lg border border-slate-300 bg-white text-slate-900 font-medium text-[15px] hover:bg-slate-50 transition-colors mb-2"
                     >
                         <Mail className="w-4 h-4" />
                         Quiero el análisis completo IVP
                     </a>
-                    <p className="text-[11px] text-muted-foreground mb-8">
+                    <p className="text-[11px] text-slate-500 mb-8">
                         Protocolo completo de 85 preguntas con informe ejecutivo
                     </p>
 
                     <button
                         onClick={onRestart}
-                        className="inline-flex items-center gap-1.5 text-[13px] text-muted-foreground hover:text-foreground transition-colors"
+                        className="inline-flex items-center gap-1.5 text-[13px] text-slate-500 hover:text-slate-900 transition-colors"
                     >
                         <RotateCcw className="w-3.5 h-3.5" />
                         Hacer el diagnóstico de nuevo
