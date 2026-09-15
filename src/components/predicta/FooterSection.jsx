@@ -72,7 +72,7 @@ export default function FooterSection() {
                         <div className="text-[11px] font-semibold text-white/30 uppercase tracking-widest mb-4">Contacto</div>
                         <ul className="space-y-2.5">
                             <li>
-                                <a href="mailto:institucional@predicta.ar" className="text-[13px] text-white/50 hover:text-white transition-colors font-google-sans">
+                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=institucional@predicta.ar" target="_blank" rel="noopener noreferrer" className="text-[13px] text-white/50 hover:text-white transition-colors font-google-sans">
                                     institucional@predicta.ar
                                 </a>
                             </li>
