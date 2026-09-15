@@ -42,11 +42,10 @@ export default function ResultFull({ result, protocol, leadData, onRestart }) {
     const now = new Date();
     const monthYear = now.toLocaleDateString('es-AR', { month: 'long', year: 'numeric' });
 
-    const mailSubject = encodeURIComponent(`Solicitud de análisis completo IVP — ${leadData?.company || ''}`);
+    const mailSubject = encodeURIComponent(`Solicitud de análisis completo IVP — ${leadData.company}`);
     const mailBody = encodeURIComponent(
-        `Hola equipo Predicta, completé el autodiagnóstico express y quisiera avanzar con el análisis completo.\n\nMi IVP Express fue ${result?.ivpScore ? result.ivpScore.toFixed(2) : ''}.\n\nNombre: ${leadData?.first_name || ''} ${leadData?.last_name || ''}\nEmpresa: ${leadData?.company || ''}\nEmail: ${leadData?.email || ''}\n\nQuedo a disposición.`
+        `Hola equipo Predicta, completé el autodiagnóstico express y quisiera avanzar con el análisis completo.\n\nMi IVP Express fue ${result.ivpScore.toFixed(2)}.\n\nNombre: ${leadData.first_name} ${leadData.last_name}\nEmpresa: ${leadData.company}\nEmail: ${leadData.email}\n\nQuedo a disposición.`
     );
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=institucional@predicta.ar&su=${mailSubject}&body=${mailBody}`;
 
     return (
         <div className="max-w-2xl mx-auto">
@@ -172,9 +171,7 @@ export default function ResultFull({ result, protocol, leadData, onRestart }) {
                     <p className="text-[12px] text-slate-400 mb-5">o</p>
 
                     <a
-                        href={gmailUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href={`mailto:institucional@predicta.ar?subject=${mailSubject}&body=${mailBody}`}
                         className="flex items-center justify-center gap-2 w-full h-[52px] rounded-lg border border-slate-300 bg-white text-slate-900 font-medium text-[15px] hover:bg-slate-50 transition-colors mb-2"
                     >
                         <Mail className="w-4 h-4" />

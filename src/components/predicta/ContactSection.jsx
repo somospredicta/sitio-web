@@ -30,9 +30,7 @@ export default function ContactSection() {
                         <Mail className="w-5 h-5 text-primary" />
                     </div>
                     <a
-                        href="https://mail.google.com/mail/?view=cm&fs=1&to=institucional@predicta.ar"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href="mailto:institucional@predicta.ar"
                         className="text-[15px] font-medium text-primary hover:underline transition-colors"
                     >
                         institucional@predicta.ar
