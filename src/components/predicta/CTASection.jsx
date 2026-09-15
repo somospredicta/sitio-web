@@ -10,7 +10,7 @@ export default function CTASection() {
     return (
         <section className="bg-[#0059FF] py-16 md:py-24">
             <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
-                <h2 className="font-funnel text-[30px] md:text-[40px] font-bold text-white lowercase leading-[1.1] mb-5">
+                <h2 className="font-funnel text-[30px] md:text-[40px] font-bold text-white leading-[1.1] mb-5">
                     ¿Listo para saber el número antes de tomar la decisión?
                 </h2>
                 <p className="text-[16px] text-white/80 mb-10 font-google-sans leading-relaxed">

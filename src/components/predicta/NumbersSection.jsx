@@ -2,10 +2,10 @@ import React, { useRef, useState, useEffect } from 'react';
 import { useInView } from 'framer-motion';
 
 const metrics = [
-    { number: 100, suffix: '+', label: 'variables del entorno político y regulatorio contempladas en cada análisis' },
-    { number: 2, suffix: '', label: 'founders que van a atender tu caso de forma personalizada' },
-    { number: 4, suffix: '', label: 'protocolos especializados según el tipo de decisión: expansión · regulación · stakeholders · capital' },
-    { number: 31, suffix: '', label: 'países cubiertos por el módulo de cumplimiento del Acuerdo UE-Mercosur' },
+    { number: 100, suffix: '+', label: 'Variables del entorno político y regulatorio contempladas en cada análisis' },
+    { number: 2, suffix: '', label: 'Founders que van a atender tu caso de forma personalizada' },
+    { number: 4, suffix: '', label: 'Protocolos especializados según el tipo de decisión: expansión · regulación · stakeholders · capital' },
+    { number: 31, suffix: '', label: 'Países cubiertos por el módulo de cumplimiento del Acuerdo UE-Mercosur' },
 ];
 
 function Counter({ target, suffix, active }) {

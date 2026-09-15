@@ -32,7 +32,7 @@ export default function SalesPain() {
                     <span className="text-[11px] font-semibold tracking-[0.15em] text-white/30 uppercase">
                         POR QUÉ LOS EMPRESARIOS USAN PREDICTA
                     </span>
-                    <h2 className="font-funnel text-[28px] md:text-[36px] font-bold text-white lowercase mt-3">
+                    <h2 className="font-funnel text-[28px] md:text-[36px] font-bold text-white mt-3">
                         ¿Reconocés alguna de estas situaciones?
                     </h2>
                 </div>

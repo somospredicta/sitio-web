@@ -36,7 +36,7 @@ function Step({ step, index }) {
             <span className="font-funnel text-[48px] font-bold text-[#0059FF] leading-none mb-4">
                 {step.num}
             </span>
-            <h3 className="font-funnel text-[20px] font-semibold text-[#020202] mb-3 lowercase">
+            <h3 className="font-funnel text-[20px] font-semibold text-[#020202] mb-3">
                 {step.title}
             </h3>
             <p className="text-[14px] text-[#555] leading-relaxed font-google-sans">

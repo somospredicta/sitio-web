@@ -26,7 +26,7 @@ export default function FooterSection() {
                     <div className="col-span-2 md:col-span-1">
                         <div className="flex items-center gap-2">
                             {<img src="https://media.base44.com/images/public/6a10ca1504aa640dc039c6a0/c82ed7f4c_isotitpoazulespectro.png" alt="Predicta" className="h-8 w-auto" />}
-                            <span className="font-funnel text-[22px] font-bold text-white lowercase">predicta</span>
+                            <span className="font-funnel text-[22px] font-bold text-white">Predicta</span>
                         </div>
                         <p className="text-[13px] text-white/40 mt-2 leading-relaxed font-google-sans">
                             El entorno político y regulatorio, cuantificado.
