@@ -2,7 +2,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/predicta/Navbar';
 import HeroSection from '../components/predicta/HeroSection';
-import CountrySelector from '../components/predicta/CountrySelector';
 import HowItWorks from '../components/predicta/HowItWorks';
 import FeatureBlocks from '../components/predicta/FeatureBlocks';
 import SalesPain from '../components/predicta/SalesPain';
@@ -23,7 +22,6 @@ export default function Home() {
     <div className="min-h-screen">
       <Navbar activePage="landing" setActivePage={setActivePage} />
       <HeroSection />
-      <CountrySelector />
       <HowItWorks />
       <FeatureBlocks />
       <SalesPain />
