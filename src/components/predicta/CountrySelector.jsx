@@ -144,7 +144,7 @@ export default function CountrySelector() {
 
                 <p className="text-center text-[12px] text-[#999] mt-4 font-google-sans">
                     Para mercados bloqueados o análisis complejos,{' '}
-                    <a href="mailto:institucional@predicta.ar" className="text-[#0059FF] hover:underline">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=institucional@predicta.ar" target="_blank" rel="noopener noreferrer" className="text-[#0059FF] hover:underline">
                         contactanos directamente →
                     </a>{' '}
                     institucional@predicta.ar

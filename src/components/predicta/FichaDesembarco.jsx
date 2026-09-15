@@ -212,7 +212,7 @@ export default function FichaDesembarco() {
             <div className="bg-[#06061A] border-t border-[#0059FF]/15 py-10 px-4 sm:px-6">
                 <p className="text-center text-[13px] text-white/35 italic font-google-sans max-w-2xl mx-auto">
                     ¿Tu empresa no es un e-commerce pero querés entender el entorno de un mercado antes de tomar una decisión? El análisis se adapta. Escribinos a{' '}
-                    <a href="mailto:institucional@predicta.ar" className="text-white/50 hover:text-white/70 underline transition-colors">institucional@predicta.ar</a>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=institucional@predicta.ar" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white/70 underline transition-colors">institucional@predicta.ar</a>
                 </p>
             </div>
 
