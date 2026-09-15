@@ -36,7 +36,7 @@ export default function CalculatingScreen({ onDone }) {
         >
             <div className="text-center px-4">
                 {/* Logo */}
-                <p className="text-white text-[20px] font-bold tracking-tight mb-10">predicta</p>
+                <p className="text-white text-[20px] font-bold tracking-tight mb-10">Predicta</p>
 
                 {/* Spinner */}
                 <div className="w-10 h-10 mx-auto mb-8 border-[3px] border-white/10 border-t-primary rounded-full animate-spin" />

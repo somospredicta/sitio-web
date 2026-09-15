@@ -256,7 +256,7 @@ export default function FichaPaisDemo() {
             {/* Badge fijo ejemplo ilustrativo */}
             <div className="fixed top-20 right-4 z-40 pointer-events-none hidden md:block">
                 <span className="inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-semibold tracking-wider uppercase font-google-sans bg-[#0059FF]/15 text-[#0059FF] border border-[#0059FF]/30 backdrop-blur-sm">
-                    Ejemplo ilustrativo · datos no reales
+                    Ejemplo ilustrativo · Datos no reales
                 </span>
             </div>
 
@@ -277,7 +277,7 @@ export default function FichaPaisDemo() {
                 {/* Badge mobile */}
                 <div className="md:hidden text-center mb-8">
                     <span className="inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-semibold tracking-wider uppercase font-google-sans bg-[#0059FF]/15 text-[#0059FF] border border-[#0059FF]/30">
-                        Ejemplo ilustrativo · datos no reales
+                        Ejemplo ilustrativo · Datos no reales
                     </span>
                 </div>
 
@@ -301,7 +301,7 @@ export default function FichaPaisDemo() {
                 <div ref={idpRef} className="border border-[#0059FF]/30 rounded-2xl bg-[#0A0A35] p-6 md:p-8 mb-14">
                     <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
                         <div className="text-center md:text-left">
-                            <p className="text-[11px] font-semibold text-white/40 uppercase tracking-wider mb-2 font-google-sans">IDP · Índice de dificultad de entrada</p>
+                            <p className="text-[11px] font-semibold text-white/40 uppercase tracking-wider mb-2 font-google-sans">IDP · Índice de Dificultad de Entrada</p>
                             <div className="flex items-baseline gap-2 justify-center md:justify-start">
                                 <span className="font-funnel text-[64px] md:text-[80px] font-bold leading-none" style={{ color: semaforoColor }}>
                                     {idpVal.toFixed(1)}

@@ -120,7 +120,7 @@ export default function FichaDesembarco() {
             <div className="bg-[#000030] py-20 md:py-28 px-4 sm:px-6">
                 <div className="max-w-xl mx-auto text-center">
                     <h3 className="font-funnel text-[28px] md:text-[34px] font-bold text-white mb-10">
-                        Tu ficha de desembarco país
+                        Tu Ficha de Desembarco País
                     </h3>
 
                     <div className="border border-[#0059FF]/30 rounded-2xl p-8 md:p-10 bg-[#0A0A35] relative">
@@ -183,7 +183,7 @@ export default function FichaDesembarco() {
                                 <form onSubmit={handleSubmit} className="space-y-4">
                                     <input name="nombre_completo" value={form.nombre_completo} onChange={handleChange} placeholder="Nombre completo" className="w-full h-12 px-4 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/30 text-[14px] font-google-sans focus:outline-none focus:border-[#0059FF] transition-colors" />
                                     <input name="mail" type="email" value={form.mail} onChange={handleChange} placeholder="tu@mail.com" className="w-full h-12 px-4 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/30 text-[14px] font-google-sans focus:outline-none focus:border-[#0059FF] transition-colors" />
-                                    <input name="telefono" value={form.telefono} onChange={handleChange} placeholder="Opcional: tu teléfono" className="w-full h-12 px-4 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/30 text-[14px] font-google-sans focus:outline-none focus:border-[#0059FF] transition-colors" />
+                                    <input name="telefono" value={form.telefono} onChange={handleChange} placeholder="Opcional: Tu teléfono" className="w-full h-12 px-4 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/30 text-[14px] font-google-sans focus:outline-none focus:border-[#0059FF] transition-colors" />
                                     <input name="marca" value={form.marca} onChange={handleChange} placeholder="¿Cómo se llama tu marca?" className="w-full h-12 px-4 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/30 text-[14px] font-google-sans focus:outline-none focus:border-[#0059FF] transition-colors" />
                                     <input name="producto" value={form.producto} onChange={handleChange} placeholder="¿Qué producto querés exportar?" className="w-full h-12 px-4 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/30 text-[14px] font-google-sans focus:outline-none focus:border-[#0059FF] transition-colors" />
                                     <select name="pais" value={form.pais} onChange={handleChange} className="w-full h-12 px-4 rounded-lg bg-white/5 border border-white/10 text-[14px] font-google-sans focus:outline-none focus:border-[#0059FF] transition-colors appearance-none text-white/60">

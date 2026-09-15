@@ -28,7 +28,7 @@ function AdminLogin({ onLogin }) {
             alt="Predicta"
             className="h-10 w-auto mb-3"
           />
-          <span className="text-2xl font-funnel font-bold text-white lowercase tracking-tight">predicta</span>
+          <span className="text-2xl font-funnel font-bold text-white tracking-tight">Predicta</span>
           <p className="text-white/40 text-sm mt-1 font-google-sans">Panel interno</p>
         </div>
 

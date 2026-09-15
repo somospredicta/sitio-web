@@ -30,7 +30,7 @@ export default function Navbar({ activePage, setActivePage }) {
             <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
                 <button onClick={goToLanding} className="flex items-center gap-2">
                     {<img src="https://media.base44.com/images/public/6a10ca1504aa640dc039c6a0/c82ed7f4c_isotitpoazulespectro.png" alt="Predicta" className="h-8 w-auto" />}
-                    <span className="text-xl font-funnel font-bold tracking-tight text-white lowercase">predicta</span>
+                    <span className="text-xl font-funnel font-bold tracking-tight text-white">Predicta</span>
                 </button>
 
                 {/* Desktop */}

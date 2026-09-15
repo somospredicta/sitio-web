@@ -21,7 +21,7 @@ function Feature({ id, bg, eyebrowColor, eyebrow, title, text, visual, reverse }
                         <span className={`text-[11px] font-semibold tracking-[0.15em] uppercase ${isDark ? 'text-white/40' : 'text-[#0059FF]'}`}>
                             {eyebrow}
                         </span>
-                        <h2 className={`font-funnel text-[26px] md:text-[32px] font-bold lowercase mt-3 mb-5 leading-[1.1] ${isDark ? 'text-white' : 'text-[#020202]'}`}>
+                        <h2 className={`font-funnel text-[26px] md:text-[32px] font-bold mt-3 mb-5 leading-[1.1] ${isDark ? 'text-white' : 'text-[#020202]'}`}>
                             {title}
                         </h2>
                         <p className={`text-[15px] leading-relaxed font-google-sans ${isDark ? 'text-white/60' : 'text-[#555]'}`}>
@@ -113,7 +113,7 @@ function VeredictoMockup() {
                     <span className="text-xl">⚠️</span>
                 </div>
                 <div>
-                    <div className="font-funnel text-[18px] font-bold text-[#020202] lowercase">condicionar avance</div>
+                    <div className="font-funnel text-[18px] font-bold text-[#020202]">Condicionar avance</div>
                     <div className="text-[12px] text-[#999]">IVP 3.4 / 5.0</div>
                 </div>
             </div>
@@ -150,7 +150,7 @@ export default function FeatureBlocks() {
             <Feature
                 bg="white"
                 eyebrow="MONITOREO CONTINUO"
-                title="el entorno cambia. tu análisis también."
+                title="El entorno cambia. Tu análisis también."
                 text="Olvidate de los informes que quedan obsoletos. Predicta monitorea los triggers políticos y regulatorios que afectan tu decisión: cambios de gobierno, nuevas normativas, conflictos de stakeholders, variaciones en el riesgo institucional. El diagnóstico tiene vigencia de 6 meses, con recalibración inmediata ante eventos críticos."
                 visual={<TimelineMockup />}
                 reverse={true}
