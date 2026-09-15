@@ -44,7 +44,7 @@ export default function HeroSection() {
                 </div>
 
                 <p className="text-[12px] text-white/30 font-google-sans">
-                    ✓ Incubado en IGNA-UCC &nbsp;·&nbsp; ✓ Autodiagnóstico gratuito &nbsp;·&nbsp; ✓ 3 minutos + posibilidad de agendar reunión con los Founders
+                    ✓ Incubado en IGNA-UCC &nbsp;·&nbsp; ✓ Autodiagnóstico gratuito &nbsp;·&nbsp; ✓ 3 minutos + Posibilidad de agendar reunión con los Founders
                 </p>
             </div>
         </section>
