@@ -1,7 +1,7 @@
 import React from 'react';
 
 const productLinks = ['Cómo funciona', 'Metodología', 'Casos', 'Autodiagnóstico'];
-const companyLinks = ['Sobre nosotros', 'Contacto'];
+const companyLinks = ['Sobre nosotros'];
 
 const scrollTo = (href) => {
     const el = document.querySelector(href);
@@ -14,7 +14,6 @@ const anchorMap = {
     'Casos': '#numeros',
     'Autodiagnóstico': '#test',
     'Sobre nosotros': '#equipo',
-    'Contacto': '#contacto',
 };
 
 export default function FooterSection() {
@@ -84,7 +83,7 @@ export default function FooterSection() {
                                     Instagram
                                 </a>
                                 <span className="text-white/20">·</span>
-                                <a href="https://linkedin.com/company/predicta-ar" target="_blank" rel="noopener noreferrer" className="text-[13px] text-white/50 hover:text-white transition-colors font-google-sans">
+                                <a href="https://www.linkedin.com/company/somospredicta" target="_blank" rel="noopener noreferrer" className="text-[13px] text-white/50 hover:text-white transition-colors font-google-sans">
                                     LinkedIn
                                 </a>
                             </li>
