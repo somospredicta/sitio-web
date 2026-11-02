@@ -6,6 +6,7 @@ import HowItWorks from '../components/predicta/HowItWorks';
 import FeatureBlocks from '../components/predicta/FeatureBlocks';
 import SalesPain from '../components/predicta/SalesPain';
 import NumbersSection from '../components/predicta/NumbersSection';
+import MapaRiesgoSection from '../components/predicta/MapaRiesgoSection';
 import TestSection from '../components/predicta/TestSection';
 import CTASection from '../components/predicta/CTASection';
 import TeamSection from '../components/predicta/TeamSection';
@@ -26,6 +27,7 @@ export default function Home() {
       <FeatureBlocks />
       <SalesPain />
       <NumbersSection />
+      <MapaRiesgoSection />
       <TestSection />
       <CTASection />
       <TeamSection />
