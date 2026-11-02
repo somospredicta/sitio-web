@@ -26,7 +26,7 @@ export default function MapaRiesgoSection() {
                         src={`${MAPA_URL}/embed`}
                         title="Mapa de riesgo exportador Predicta"
                         loading="lazy"
-                        className="block w-full h-[360px] md:h-[560px] border-0"
+                        className="block w-full h-[480px] md:h-[600px] border-0"
                     />
                 </div>
 
