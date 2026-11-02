@@ -11,9 +11,11 @@ import TestSection from '../components/predicta/TestSection';
 import CTASection from '../components/predicta/CTASection';
 import TeamSection from '../components/predicta/TeamSection';
 import FooterSection from '../components/predicta/FooterSection';
+import useScrollToHash from '../hooks/use-scroll-to-hash';
 
 export default function Home() {
   const navigate = useNavigate();
+  useScrollToHash();
 
   const setActivePage = (page) => {
     if (page === 'ficha') navigate('/ficha-pais');
