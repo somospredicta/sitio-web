@@ -41,6 +41,14 @@ export default function Navbar({ activePage, setActivePage }) {
                     >
                         Ficha de Desembarco
                     </button>
+                    <a
+                        href="https://mapa.predicta.ar"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm font-medium transition-colors font-google-sans text-white/60 hover:text-white"
+                    >
+                        Mapa de riesgo
+                    </a>
                     <button
                         onClick={() => { if (activePage !== 'landing') { setActivePage('landing'); setTimeout(() => document.querySelector('#test')?.scrollIntoView({ behavior: 'smooth' }), 100); } else { document.querySelector('#test')?.scrollIntoView({ behavior: 'smooth' }); } }}
                         className="h-10 px-5 rounded-full bg-[#0059FF] text-white text-sm font-medium hover:bg-[#0059FF]/90 transition-colors"
@@ -67,6 +75,9 @@ export default function Navbar({ activePage, setActivePage }) {
                     <button onClick={goToFicha} className={`block w-full text-left text-sm py-2 transition-colors ${activePage === 'ficha' ? 'text-[#0059FF]' : 'text-white/60 hover:text-white'}`}>
                         Ficha de Desembarco
                     </button>
+                    <a href="https://mapa.predicta.ar" target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)} className="block w-full text-left text-sm py-2 transition-colors text-white/60 hover:text-white">
+                        Mapa de riesgo
+                    </a>
                     <button
                         onClick={() => { setMobileOpen(false); if (activePage !== 'landing') { setActivePage('landing'); setTimeout(() => document.querySelector('#test')?.scrollIntoView({ behavior: 'smooth' }), 100); } else { document.querySelector('#test')?.scrollIntoView({ behavior: 'smooth' }); } }}
                         className="w-full h-11 rounded-full bg-[#0059FF] text-white text-sm font-medium"
