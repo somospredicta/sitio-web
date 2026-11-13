@@ -147,7 +147,7 @@ function NavbarHome({ scrolled, mobileOpen, setMobileOpen, navigate, enHome }) {
                     <button onClick={() => irA('#la-app')} className={`block w-full text-left py-2 ${link}`}>La app</button>
                     <a href="https://mapa.predicta.ar" target="_blank" rel="noopener noreferrer" className={`block w-full py-2 ${link}`}>Mapa de riesgo</a>
                     <button onClick={irAEquipo} className={`block w-full text-left py-2 ${link}`}>Equipo</button>
-                    <a href="https://app.predicta.ar" className="mt-2 w-full h-11 inline-flex items-center justify-center rounded-full bg-[#0059FF] text-white text-sm font-medium">
+                    <a href="https://app.predicta.ar/bienvenida" className="mt-2 w-full h-11 inline-flex items-center justify-center rounded-full bg-[#0059FF] text-white text-sm font-medium">
                         Probala gratis
                     </a>
                 </div>
