@@ -1,51 +1,44 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import Revelar, { estilo } from './nuevo/Revelar';
 
 const MAPA_URL = 'https://mapa.predicta.ar';
 
 export default function MapaRiesgoSection() {
     return (
-        <section id="mapa" className="bg-[#000030] py-16 md:py-24 scroll-mt-16">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6">
-                <div className="max-w-2xl mb-10">
-                    <p className="text-[13px] uppercase tracking-widest text-[#0059FF] font-semibold mb-3 font-google-sans">
-                        Herramienta gratuita
-                    </p>
-                    <h2 className="font-funnel text-[30px] md:text-[40px] font-bold text-white leading-[1.1] mb-5">
-                        Mapa de riesgo exportador
-                    </h2>
-                    <p className="text-[16px] text-white/70 font-google-sans leading-relaxed">
+        <section id="mapa" className={`${estilo.seccion} scroll-mt-16`}>
+            <div
+                className="absolute left-1/2 top-[55%] -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] pointer-events-none"
+                style={{ background: 'radial-gradient(closest-side, rgba(0,89,255,.22), rgba(0,89,255,0) 70%)' }}
+            />
+            <div className={`${estilo.contenedor} relative`}>
+                <Revelar className="max-w-3xl">
+                    <p className={estilo.eyebrow}>Herramienta gratuita</p>
+                    <h2 className={`${estilo.titulo} mt-5`}>Mapa de riesgo exportador</h2>
+                    <p className={`${estilo.bajada} mt-6`}>
                         Pasá el mouse por un país y mirá el riesgo político, institucional y estructural
                         del entorno, visto desde Argentina. Es la probabilidad general: cuánto le pega a tu
                         empresa, lo medimos nosotros.
                     </p>
-                </div>
+                </Revelar>
 
-                <div className="rounded-2xl overflow-hidden border border-white/10 bg-[#000030]">
-                    <iframe
-                        src={`${MAPA_URL}/embed`}
-                        title="Mapa de riesgo exportador Predicta"
-                        loading="lazy"
-                        className="block w-full h-[480px] md:h-[600px] border-0"
-                    />
-                </div>
+                <Revelar className="mt-12">
+                    <div className="rounded-3xl overflow-hidden border border-white/[0.12] bg-[#000030] shadow-[0_40px_120px_-30px_rgba(0,89,255,0.45)]">
+                        <iframe
+                            src={`${MAPA_URL}/embed`}
+                            title="Mapa de riesgo exportador Predicta"
+                            loading="lazy"
+                            className="block w-full h-[480px] md:h-[620px] border-0"
+                        />
+                    </div>
+                </Revelar>
 
-                <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                    <a
-                        href={MAPA_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 h-[52px] px-8 rounded-full bg-[#0059FF] text-white font-semibold text-[15px] hover:bg-[#0059FF]/90 transition-all duration-200"
-                    >
+                <div className="mt-10 flex flex-col sm:flex-row gap-3">
+                    <a href={MAPA_URL} target="_blank" rel="noopener noreferrer" className={estilo.boton}>
                         Abrir el mapa completo
                         <ArrowRight className="w-4 h-4" />
                     </a>
-                    <a
-                        href={`${MAPA_URL}/metodologia`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center h-[52px] px-8 rounded-full border-2 border-white/30 text-white font-medium text-[15px] hover:bg-white/10 transition-all duration-200"
-                    >
+                    <a href={`${MAPA_URL}/metodologia`} target="_blank" rel="noopener noreferrer" className={estilo.botonSecundario}>
                         Cómo se calcula
                     </a>
                 </div>

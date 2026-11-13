@@ -5,13 +5,10 @@ import HeroApp from '../components/predicta/HeroApp';
 import QuienTeAvisa from '../components/predicta/QuienTeAvisa';
 import LaApp from '../components/predicta/LaApp';
 import MideTuEmpresa from '../components/predicta/MideTuEmpresa';
-import HowItWorks from '../components/predicta/HowItWorks';
-import FeatureBlocks from '../components/predicta/FeatureBlocks';
 import SalesPain from '../components/predicta/SalesPain';
 import NumbersSection from '../components/predicta/NumbersSection';
 import MapaRiesgoSection from '../components/predicta/MapaRiesgoSection';
 import CTASection from '../components/predicta/CTASection';
-import TeamSection from '../components/predicta/TeamSection';
 import FooterSection from '../components/predicta/FooterSection';
 import useScrollToHash from '../hooks/use-scroll-to-hash';
 
@@ -30,13 +27,10 @@ export default function Home() {
       <QuienTeAvisa />
       <LaApp />
       <MideTuEmpresa />
-      <HowItWorks />
-      <FeatureBlocks />
       <SalesPain />
       <NumbersSection />
       <MapaRiesgoSection />
       <CTASection />
-      <TeamSection />
       <FooterSection />
     </div>
   );
