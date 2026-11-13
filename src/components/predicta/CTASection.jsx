@@ -14,7 +14,7 @@ export default function CTASection() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                     <a
-                        href="https://app.predicta.ar"
+                        href="https://app.predicta.ar/bienvenida"
                         className="inline-flex items-center gap-2 h-[52px] px-8 rounded-full bg-white text-[#0059FF] font-semibold text-[15px] hover:bg-white/90 transition-all duration-200 shadow-lg"
                     >
                         Probala gratis
