@@ -1,0 +1,72 @@
+/* Animaciones de la home (hero con notificaciones, la app y "Predicta mide tu empresa"). */
+
+/* Notificaciones del hero: ciclo de 12 s, cada una entra subiendo 12 px y se va. */
+@keyframes notif-llega {
+  0% { opacity: 0; transform: translateY(12px); }
+  4% { opacity: 1; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(0); }
+  36% { opacity: 0; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(0); }
+}
+.notif-hero {
+  opacity: 0;
+  animation: notif-llega 12s infinite both;
+}
+
+/* Barra de progreso de las pestañas de la app (tipo historias). */
+@keyframes barra-llena {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+.barra-paso {
+  transform-origin: left center;
+  animation: barra-llena 6s linear forwards;
+}
+
+/* Celular flotando suave. */
+@keyframes flota {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.celular-flota {
+  animation: flota 6s ease-in-out infinite;
+}
+
+/* Cambio de pantalla dentro del celular. */
+@keyframes pantalla-entra {
+  from { opacity: 0; transform: translateY(10px) scale(0.985); }
+  to { opacity: 1; transform: none; }
+}
+.pantalla-entra {
+  animation: pantalla-entra 0.6s cubic-bezier(.2, .8, .2, 1) both;
+}
+
+/* "Predicta mide tu empresa": 4 escenas de 6 s en un ciclo de 24 s. */
+@keyframes escena {
+  0% { opacity: 0; }
+  4% { opacity: 1; }
+  25% { opacity: 1; }
+  29% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes escena-zoom {
+  0% { transform: scale(1.1); }
+  29% { transform: scale(1); }
+  100% { transform: scale(1); }
+}
+.escena {
+  opacity: 0;
+  animation: escena 24s infinite both;
+}
+.escena-foto {
+  animation: escena-zoom 24s infinite both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notif-hero { animation: none; opacity: 1; }
+  .barra-paso { animation: none; transform: scaleX(1); }
+  .celular-flota, .pantalla-entra { animation: none; }
+  .escena, .escena-foto { animation: none; }
+  .escena { opacity: 0; }
+  .escena:first-child { opacity: 1; }
+}

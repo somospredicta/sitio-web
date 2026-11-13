@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-export default function Navbar({ activePage, setActivePage }) {
+export default function Navbar({ activePage, setActivePage, variante }) {
     const [scrolled, setScrolled] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
     const navigate = useNavigate();
@@ -24,6 +24,8 @@ export default function Navbar({ activePage, setActivePage }) {
         setActivePage('ficha');
         window.scrollTo({ top: 0 });
     };
+
+    if (variante === 'home') return <NavbarHome scrolled={scrolled} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} navigate={navigate} />;
 
     return (
         <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${scrolled ? 'bg-[#000030]/95 backdrop-blur-sm shadow-sm' : 'bg-[#000030]'}`}>
@@ -84,6 +86,61 @@ export default function Navbar({ activePage, setActivePage }) {
                     >
                         Autodiagnóstico gratuito
                     </button>
+                </div>
+            )}
+        </nav>
+    );
+}
+
+/* Barra de la home: transparente sobre el video hasta que se baja. */
+function NavbarHome({ scrolled, mobileOpen, setMobileOpen, navigate }) {
+    const irA = (sel) => {
+        setMobileOpen(false);
+        document.querySelector(sel)?.scrollIntoView({ behavior: 'smooth' });
+    };
+    const link = 'text-sm font-medium font-google-sans text-[#FEFEFE]/75 hover:text-[#FEFEFE] transition-colors';
+    return (
+        <nav
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+                scrolled || mobileOpen ? 'bg-[#000030]/90 backdrop-blur-md border-b border-white/10' : 'bg-transparent'
+            }`}
+        >
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+                <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Predicta, ir arriba">
+                    <img src="/img/logo-predicta.svg" alt="Predicta" className="h-7 w-auto" />
+                </button>
+
+                <div className="hidden md:flex items-center gap-8">
+                    <button onClick={() => irA('#la-app')} className={link}>La app</button>
+                    <a href="https://mapa.predicta.ar" target="_blank" rel="noopener noreferrer" className={link}>Mapa de riesgo</a>
+                    <button onClick={() => irA('#equipo')} className={link}>Equipo</button>
+                    <a
+                        href="https://app.predicta.ar"
+                        className="h-10 px-5 inline-flex items-center rounded-full bg-[#0059FF] text-[#FEFEFE] text-sm font-medium font-google-sans hover:bg-[#0059FF]/90 transition-colors"
+                    >
+                        Probala gratis
+                    </a>
+                    <button
+                        onClick={() => navigate('/admin')}
+                        className="text-xs text-white/30 hover:text-white/60 transition-colors border border-white/10 hover:border-white/30 px-3 h-8 rounded-full"
+                    >
+                        Panel
+                    </button>
+                </div>
+
+                <button className="md:hidden p-2 text-white" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menú">
+                    {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                </button>
+            </div>
+
+            {mobileOpen && (
+                <div className="md:hidden px-4 pb-4 space-y-1">
+                    <button onClick={() => irA('#la-app')} className={`block w-full text-left py-2 ${link}`}>La app</button>
+                    <a href="https://mapa.predicta.ar" target="_blank" rel="noopener noreferrer" className={`block w-full py-2 ${link}`}>Mapa de riesgo</a>
+                    <button onClick={() => irA('#equipo')} className={`block w-full text-left py-2 ${link}`}>Equipo</button>
+                    <a href="https://app.predicta.ar" className="mt-2 w-full h-11 inline-flex items-center justify-center rounded-full bg-[#0059FF] text-white text-sm font-medium">
+                        Probala gratis
+                    </a>
                 </div>
             )}
         </nav>
