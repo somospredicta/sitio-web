@@ -3,13 +3,13 @@ import { useInView } from 'framer-motion';
 import Revelar, { estilo } from './nuevo/Revelar';
 
 const metrics = [
-    { number: 100, suffix: '+', label: 'Variables del entorno político y regulatorio contempladas en cada análisis' },
-    { number: 2, suffix: '', label: 'Founders que van a atender tu caso de forma personalizada' },
-    { number: 4, suffix: '', label: 'Protocolos especializados según el tipo de decisión: expansión · regulación · stakeholders · capital' },
-    { number: 31, suffix: '', label: 'Países cubiertos por el módulo de cumplimiento del Acuerdo UE-Mercosur' },
+    { number: 6, prefix: '', suffix: '', label: 'Frentes de riesgo medidos para tu empresa: económico, político, regulatorio, social y laboral, internacional y tu sector' },
+    { number: 3, prefix: '', suffix: '', label: 'Escenarios para cada hecho: optimista, intermedio y pesimista, con qué hacer en cada uno' },
+    { number: 100, prefix: '', suffix: '%', label: 'De los datos con fuente y link. Si un dato no está, te lo decimos' },
+    { number: 0, prefix: '$', suffix: '', label: 'La app es gratis' },
 ];
 
-function Counter({ target, suffix, active }) {
+function Counter({ target, prefix, suffix, active }) {
     const [val, setVal] = useState(0);
 
     useEffect(() => {
@@ -36,8 +36,9 @@ function Counter({ target, suffix, active }) {
 
     return (
         <span className="font-funnel text-[64px] md:text-[84px] font-semibold leading-none tracking-tight text-[#FEFEFE]">
+            {prefix && <span className="text-[#4D8BFF]">{prefix}</span>}
             {val}
-            <span className="text-[#4D8BFF]">{suffix}</span>
+            {suffix && <span className="text-[#4D8BFF]">{suffix}</span>}
         </span>
     );
 }
@@ -59,7 +60,7 @@ export default function NumbersSection() {
                             key={i}
                             className={`pt-10 pb-6 lg:pr-8 ${i > 0 ? 'lg:pl-8 lg:border-l border-white/10' : ''} ${i % 2 === 1 ? 'sm:pl-8 sm:border-l lg:border-l' : ''}`}
                         >
-                            <Counter target={m.number} suffix={m.suffix} active={inView} />
+                            <Counter target={m.number} prefix={m.prefix} suffix={m.suffix} active={inView} />
                             <p className="font-google-sans text-[14px] text-[#A9B6DA] mt-4 leading-relaxed max-w-[260px]">{m.label}</p>
                         </div>
                     ))}

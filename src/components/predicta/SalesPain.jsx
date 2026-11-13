@@ -4,20 +4,20 @@ import Revelar, { estilo } from './nuevo/Revelar';
 
 const rows = [
     {
-        pain: '"Tomé una decisión de expansión que parecía sólida y el entorno político la destruyó."',
-        solution: 'Identificamos los riesgos no-mercado antes de que tomes la decisión, no después.',
+        pain: '"Me enteré de la ley cuando ya estaba aprobada."',
+        solution: 'La agenda te muestra las leyes, elecciones y fallos que te tocan antes de que pasen, con fecha y estado.',
     },
     {
-        pain: '"Mis asesores me dicen que el país es complicado, pero nadie me dice cuánto."',
-        solution: 'El IVP convierte el riesgo político en un número concreto y verificable.',
+        pain: '"Leo las noticias todos los días y no sé cuáles me afectan."',
+        solution: 'Filtramos por tu sector, tu provincia y tus mercados: ves solo lo que te toca.',
     },
     {
-        pain: '"Perdí tiempo y plata en una negociación que nunca iba a prosperar por razones regulatorias."',
-        solution: 'Detectamos los deal-breakers estructurales en la etapa de evaluación, no al final.',
+        pain: '"Me dicen que el país es complicado, pero nadie me dice cuánto."',
+        solution: 'Un número del 1 al 5 y un semáforo para cada frente de tu empresa.',
     },
     {
-        pain: '"No sé si el problema es el mercado o el entorno político."',
-        solution: 'El doble eje IVP-PI / IAS separa el riesgo institucional del atractivo comercial.',
+        pain: '"Cuando cambian las reglas, no sé qué hacer primero."',
+        solution: 'Para cada hecho, tres escenarios y qué hacer ahora en cada uno.',
     },
 ];
 
