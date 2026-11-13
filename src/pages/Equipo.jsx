@@ -22,7 +22,7 @@ const EQUIPO = [
         descripcion:
             'Lic. en Ciencia Política (UCC). Asesor legislativo activo en Córdoba. Especialista en estrategia comunicacional institucional y relaciones con actores de poder.',
         foto: 'https://media.base44.com/images/public/6a10ca1504aa640dc039c6a0/61e146afc_QuienesGiuliano.png',
-        encuadre: 'object-top',
+        encuadre: 'object-top scale-[1.22] origin-top',
         instagram: '',
         linkedin: 'https://www.linkedin.com/in/giuliano-doffo-659169270/',
     },
