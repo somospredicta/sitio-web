@@ -6,7 +6,7 @@ const MAPA_URL = 'https://mapa.predicta.ar';
 
 export default function MapaRiesgoSection() {
     return (
-        <section id="mapa" className={`${estilo.seccion} scroll-mt-16`}>
+        <section id="mapa" className={`${estilo.seccion} scroll-mt-16 overflow-hidden`}>
             <div
                 className="absolute left-1/2 top-[55%] -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] pointer-events-none"
                 style={{ background: 'radial-gradient(closest-side, rgba(0,89,255,.22), rgba(0,89,255,0) 70%)' }}
