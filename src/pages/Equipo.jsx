@@ -14,7 +14,7 @@ const EQUIPO = [
         foto: 'https://media.base44.com/images/public/6a10ca1504aa640dc039c6a0/24b29ce38_QuienesAgustina.png',
         encuadre: 'object-top',
         instagram: '',
-        linkedin: '',
+        linkedin: 'https://www.linkedin.com/in/agustina-martinez-0218aa245/',
     },
     {
         nombre: 'Giuliano Doffo',
@@ -24,7 +24,7 @@ const EQUIPO = [
         foto: 'https://media.base44.com/images/public/6a10ca1504aa640dc039c6a0/61e146afc_QuienesGiuliano.png',
         encuadre: 'object-center scale-125',
         instagram: '',
-        linkedin: '',
+        linkedin: 'https://www.linkedin.com/in/giuliano-doffo-659169270/',
     },
 ];
 
