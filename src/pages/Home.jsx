@@ -1,13 +1,15 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/predicta/Navbar';
-import HeroSection from '../components/predicta/HeroSection';
+import HeroApp from '../components/predicta/HeroApp';
+import QuienTeAvisa from '../components/predicta/QuienTeAvisa';
+import LaApp from '../components/predicta/LaApp';
+import MideTuEmpresa from '../components/predicta/MideTuEmpresa';
 import HowItWorks from '../components/predicta/HowItWorks';
 import FeatureBlocks from '../components/predicta/FeatureBlocks';
 import SalesPain from '../components/predicta/SalesPain';
 import NumbersSection from '../components/predicta/NumbersSection';
 import MapaRiesgoSection from '../components/predicta/MapaRiesgoSection';
-import TestSection from '../components/predicta/TestSection';
 import CTASection from '../components/predicta/CTASection';
 import TeamSection from '../components/predicta/TeamSection';
 import FooterSection from '../components/predicta/FooterSection';
@@ -22,15 +24,17 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen">
-      <Navbar activePage="landing" setActivePage={setActivePage} />
-      <HeroSection />
+    <div className="min-h-screen bg-[#000030]">
+      <Navbar activePage="landing" setActivePage={setActivePage} variante="home" />
+      <HeroApp />
+      <QuienTeAvisa />
+      <LaApp />
+      <MideTuEmpresa />
       <HowItWorks />
       <FeatureBlocks />
       <SalesPain />
       <NumbersSection />
       <MapaRiesgoSection />
-      <TestSection />
       <CTASection />
       <TeamSection />
       <FooterSection />

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const productLinks = ['Cómo funciona', 'Metodología', 'Casos', 'Autodiagnóstico'];
+const productLinks = ['La app', 'Cómo funciona', 'Metodología', 'Casos'];
 const companyLinks = ['Sobre nosotros'];
 
 const scrollTo = (href) => {
@@ -12,7 +12,7 @@ const anchorMap = {
     'Cómo funciona': '#como-funciona',
     'Metodología': '#metodologia',
     'Casos': '#numeros',
-    'Autodiagnóstico': '#test',
+    'La app': '#la-app',
     'Sobre nosotros': '#equipo',
 };
 
