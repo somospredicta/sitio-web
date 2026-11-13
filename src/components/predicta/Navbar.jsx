@@ -124,7 +124,7 @@ function NavbarHome({ scrolled, mobileOpen, setMobileOpen, navigate, enHome }) {
                     <a href="https://mapa.predicta.ar" target="_blank" rel="noopener noreferrer" className={link}>Mapa de riesgo</a>
                     <button onClick={irAEquipo} className={link}>Equipo</button>
                     <a
-                        href="https://app.predicta.ar"
+                        href="https://app.predicta.ar/bienvenida"
                         className="h-10 px-5 inline-flex items-center rounded-full bg-[#0059FF] text-[#FEFEFE] text-sm font-medium font-google-sans hover:bg-[#0059FF]/90 transition-colors"
                     >
                         Probala gratis

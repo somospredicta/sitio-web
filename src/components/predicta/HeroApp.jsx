@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 import './home-app.css';
 
-export const APP_URL = 'https://app.predicta.ar';
+export const APP_URL = 'https://app.predicta.ar/bienvenida';
 
 // Colores del semáforo de la app.
 export const SEMAFORO = {
