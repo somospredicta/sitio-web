@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useInView } from 'framer-motion';
+import Revelar, { estilo } from './nuevo/Revelar';
 
 const metrics = [
     { number: 100, suffix: '+', label: 'Variables del entorno político y regulatorio contempladas en cada análisis' },
@@ -13,6 +14,10 @@ function Counter({ target, suffix, active }) {
 
     useEffect(() => {
         if (!active) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            setVal(target);
+            return;
+        }
         const duration = 1200;
         const steps = 50;
         const increment = target / steps;
@@ -30,8 +35,9 @@ function Counter({ target, suffix, active }) {
     }, [active, target]);
 
     return (
-        <span className="font-funnel text-[56px] md:text-[72px] font-bold text-[#0059FF] leading-none">
-            {val}{suffix}
+        <span className="font-funnel text-[64px] md:text-[84px] font-semibold leading-none tracking-tight text-[#FEFEFE]">
+            {val}
+            <span className="text-[#4D8BFF]">{suffix}</span>
         </span>
     );
 }
@@ -41,32 +47,31 @@ export default function NumbersSection() {
     const inView = useInView(ref, { once: true, margin: '-80px' });
 
     return (
-        <section id="numeros" className="bg-white py-16 md:py-24">
-            <div className="max-w-5xl mx-auto px-4 sm:px-6">
-                <div className="text-center mb-14">
-                    <span className="text-[11px] font-semibold tracking-[0.15em] text-[#0059FF] uppercase">
-                        POR QUÉ ELEGIRNOS
-                    </span>
-                </div>
+        <section id="numeros" className={estilo.seccion}>
+            <div className={estilo.contenedor}>
+                <Revelar>
+                    <p className={estilo.eyebrow}>Por qué elegirnos</p>
+                </Revelar>
 
-                <div ref={ref} className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6 mb-12">
+                <div ref={ref} className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-white/10">
                     {metrics.map((m, i) => (
-                        <div key={i} className="text-center">
+                        <div
+                            key={i}
+                            className={`pt-10 pb-6 lg:pr-8 ${i > 0 ? 'lg:pl-8 lg:border-l border-white/10' : ''} ${i % 2 === 1 ? 'sm:pl-8 sm:border-l lg:border-l' : ''}`}
+                        >
                             <Counter target={m.number} suffix={m.suffix} active={inView} />
-                            <p className="text-[13px] text-[#555] mt-3 leading-snug font-google-sans">
-                                {m.label}
-                            </p>
+                            <p className="font-google-sans text-[14px] text-[#A9B6DA] mt-4 leading-relaxed max-w-[260px]">{m.label}</p>
                         </div>
                     ))}
                 </div>
 
-                <div className="text-center">
-                    <div className="inline-flex items-center gap-2 bg-[#F7F8FA] border border-[#e5e7eb] rounded-full px-5 py-2.5">
-                        <span className="text-[13px] text-[#555] font-google-sans">
-                            Incubado en el <strong className="text-[#020202]">IGNA — Centro de Emprendedurismo e Innovación · UCC</strong>
+                <Revelar className="mt-12">
+                    <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-5 py-2.5">
+                        <span className="font-google-sans text-[13px] text-[#A9B6DA]">
+                            Incubado en el <strong className="font-medium text-[#FEFEFE]">IGNA — Centro de Emprendedurismo e Innovación · UCC</strong>
                         </span>
                     </div>
-                </div>
+                </Revelar>
             </div>
         </section>
     );

@@ -25,7 +25,7 @@ export default function Navbar({ activePage, setActivePage, variante }) {
         window.scrollTo({ top: 0 });
     };
 
-    if (variante === 'home') return <NavbarHome scrolled={scrolled} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} navigate={navigate} />;
+    if (variante === 'home') return <NavbarHome scrolled={scrolled} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} navigate={navigate} enHome={window.location.pathname === '/'} />;
 
     return (
         <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${scrolled ? 'bg-[#000030]/95 backdrop-blur-sm shadow-sm' : 'bg-[#000030]'}`}>
@@ -93,10 +93,19 @@ export default function Navbar({ activePage, setActivePage, variante }) {
 }
 
 /* Barra de la home: transparente sobre el video hasta que se baja. */
-function NavbarHome({ scrolled, mobileOpen, setMobileOpen, navigate }) {
+function NavbarHome({ scrolled, mobileOpen, setMobileOpen, navigate, enHome }) {
     const irA = (sel) => {
         setMobileOpen(false);
-        document.querySelector(sel)?.scrollIntoView({ behavior: 'smooth' });
+        if (enHome) document.querySelector(sel)?.scrollIntoView({ behavior: 'smooth' });
+        else navigate(`/${sel}`);
+    };
+    const irAEquipo = () => {
+        setMobileOpen(false);
+        navigate('/equipo');
+    };
+    const irArriba = () => {
+        if (enHome) window.scrollTo({ top: 0, behavior: 'smooth' });
+        else navigate('/');
     };
     const link = 'text-sm font-medium font-google-sans text-[#FEFEFE]/75 hover:text-[#FEFEFE] transition-colors';
     return (
@@ -106,16 +115,16 @@ function NavbarHome({ scrolled, mobileOpen, setMobileOpen, navigate }) {
             }`}
         >
             <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-                <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Predicta, ir arriba">
+                <button onClick={irArriba} aria-label="Predicta, ir al inicio">
                     <img src="/img/logo-predicta.svg" alt="Predicta" className="h-7 w-auto" />
                 </button>
 
                 <div className="hidden md:flex items-center gap-8">
                     <button onClick={() => irA('#la-app')} className={link}>La app</button>
                     <a href="https://mapa.predicta.ar" target="_blank" rel="noopener noreferrer" className={link}>Mapa de riesgo</a>
-                    <button onClick={() => irA('#equipo')} className={link}>Equipo</button>
+                    <button onClick={irAEquipo} className={link}>Equipo</button>
                     <a
-                        href="https://app.predicta.ar"
+                        href="https://app.predicta.ar/bienvenida"
                         className="h-10 px-5 inline-flex items-center rounded-full bg-[#0059FF] text-[#FEFEFE] text-sm font-medium font-google-sans hover:bg-[#0059FF]/90 transition-colors"
                     >
                         Probala gratis
@@ -137,8 +146,8 @@ function NavbarHome({ scrolled, mobileOpen, setMobileOpen, navigate }) {
                 <div className="md:hidden px-4 pb-4 space-y-1">
                     <button onClick={() => irA('#la-app')} className={`block w-full text-left py-2 ${link}`}>La app</button>
                     <a href="https://mapa.predicta.ar" target="_blank" rel="noopener noreferrer" className={`block w-full py-2 ${link}`}>Mapa de riesgo</a>
-                    <button onClick={() => irA('#equipo')} className={`block w-full text-left py-2 ${link}`}>Equipo</button>
-                    <a href="https://app.predicta.ar" className="mt-2 w-full h-11 inline-flex items-center justify-center rounded-full bg-[#0059FF] text-white text-sm font-medium">
+                    <button onClick={irAEquipo} className={`block w-full text-left py-2 ${link}`}>Equipo</button>
+                    <a href="https://app.predicta.ar/bienvenida" className="mt-2 w-full h-11 inline-flex items-center justify-center rounded-full bg-[#0059FF] text-white text-sm font-medium">
                         Probala gratis
                     </a>
                 </div>

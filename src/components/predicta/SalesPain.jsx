@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import React from 'react';
 import { Check } from 'lucide-react';
+import Revelar, { estilo } from './nuevo/Revelar';
 
 const rows = [
     {
@@ -22,48 +22,29 @@ const rows = [
 ];
 
 export default function SalesPain() {
-    const ref = useRef(null);
-    const inView = useInView(ref, { once: true, margin: '-60px' });
-
     return (
-        <section className="bg-[#000030] py-16 md:py-24">
-            <div className="max-w-5xl mx-auto px-4 sm:px-6">
-                <div className="text-center mb-12">
-                    <span className="text-[11px] font-semibold tracking-[0.15em] text-white/30 uppercase">
-                        POR QUÉ LOS EMPRESARIOS USAN PREDICTA
-                    </span>
-                    <h2 className="font-funnel text-[28px] md:text-[36px] font-bold text-white mt-3">
-                        ¿Reconocés alguna de estas situaciones?
-                    </h2>
-                </div>
+        <section className={estilo.seccion}>
+            <div className={estilo.contenedor}>
+                <Revelar className="max-w-3xl">
+                    <p className={estilo.eyebrow}>Por qué los empresarios usan Predicta</p>
+                    <h2 className={`${estilo.titulo} mt-5`}>¿Reconocés alguna de estas situaciones?</h2>
+                </Revelar>
 
-                <motion.div
-                    ref={ref}
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.6 }}
-                    className="space-y-4"
-                >
+                <div className="mt-14 grid gap-4 md:grid-cols-2 md:gap-5">
                     {rows.map((row, i) => (
-                        <div key={i} className="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-xl overflow-hidden">
-                            {/* Pain */}
-                            <div className="bg-[#0D1B4B] px-6 py-5">
-                                <p className="text-[14px] text-white/70 italic font-google-sans leading-relaxed">
-                                    {row.pain}
-                                </p>
-                            </div>
-                            {/* Solution */}
-                            <div className="bg-[#0059FF]/15 border border-[#0059FF]/20 px-6 py-5 flex items-center gap-3">
-                                <div className="w-5 h-5 rounded-full bg-[#0059FF] flex items-center justify-center flex-shrink-0">
-                                    <Check className="w-3 h-3 text-white" />
+                        <Revelar key={i} retraso={i * 0.08}>
+                            <div className={`${estilo.tarjeta} h-full p-7 md:p-8 flex flex-col`}>
+                                <p className="font-funnel text-[20px] md:text-[22px] leading-snug text-[#FEFEFE]/90 pb-6 border-b border-white/10">{row.pain}</p>
+                                <div className="mt-auto pt-6 flex items-start gap-3">
+                                    <span className="mt-0.5 w-6 h-6 rounded-full bg-[#0059FF] flex items-center justify-center shrink-0">
+                                        <Check className="w-3.5 h-3.5 text-white" />
+                                    </span>
+                                    <p className="font-google-sans text-[15px] leading-relaxed text-[#D6DEF5]">{row.solution}</p>
                                 </div>
-                                <p className="text-[14px] text-white/80 font-google-sans leading-relaxed">
-                                    {row.solution}
-                                </p>
                             </div>
-                        </div>
+                        </Revelar>
                     ))}
-                </motion.div>
+                </div>
             </div>
         </section>
     );
